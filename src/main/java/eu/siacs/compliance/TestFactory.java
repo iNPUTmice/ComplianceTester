@@ -1,5 +1,6 @@
-package eu.siacs.compliance.tests;
+package eu.siacs.compliance;
 
+import eu.siacs.compliance.tests.AbstractTest;
 import rocks.xmpp.core.session.XmppClient;
 
 public class TestFactory {

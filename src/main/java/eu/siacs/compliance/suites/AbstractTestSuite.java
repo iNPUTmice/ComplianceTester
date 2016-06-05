@@ -2,7 +2,7 @@ package eu.siacs.compliance.suites;
 
 import eu.siacs.compliance.tests.AbstractTest;
 import eu.siacs.compliance.Result;
-import eu.siacs.compliance.tests.TestFactory;
+import eu.siacs.compliance.TestFactory;
 import rocks.xmpp.addr.Jid;
 import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.session.XmppClient;

@@ -1,11 +1,13 @@
 package eu.siacs;
 
-import eu.siacs.compliance.suites.AbstractTestSuite;
-import eu.siacs.compliance.suites.EverythingTestSuite;
-import eu.siacs.compliance.suites.TestSuiteFactory;
+import eu.siacs.compliance.suites.*;
+import eu.siacs.compliance.TestSuiteFactory;
 import rocks.xmpp.addr.Jid;
 import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.sasl.AuthenticationException;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class ComplianceTester {
 
@@ -17,7 +19,16 @@ public class ComplianceTester {
         }
         Jid jid = Jid.of(args[0]);
         String password = args[1];
-        runTestSuite(EverythingTestSuite.class, jid, password);
+        List<Class <? extends AbstractTestSuite>> testSuites = Arrays.asList(
+                AdvancedServerCore.class,
+                AdvancedServerIM.class,
+                AdvancedServerMobile.class,
+                Conversations.class
+        );
+        for(Class<?extends AbstractTestSuite> testSuite : testSuites) {
+            runTestSuite(testSuite, jid, password);
+            System.out.println("\n");
+        }
     }
 
     private static void runTestSuite(Class <? extends AbstractTestSuite> clazz, Jid jid, String password) {
