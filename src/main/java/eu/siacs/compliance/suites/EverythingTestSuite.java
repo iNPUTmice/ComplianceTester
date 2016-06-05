@@ -1,6 +1,7 @@
 package eu.siacs.compliance.suites;
 
 import eu.siacs.compliance.tests.*;
+import rocks.xmpp.addr.Jid;
 import rocks.xmpp.core.session.XmppClient;
 
 import java.util.Arrays;
@@ -12,8 +13,8 @@ import java.util.List;
  */
 public class EverythingTestSuite extends AbstractTestSuite {
 
-    public EverythingTestSuite(XmppClient client) {
-        super(client);
+    public EverythingTestSuite(XmppClient client, Jid jid, String password) {
+        super(client, jid, password);
     }
 
     @Override
@@ -21,14 +22,16 @@ public class EverythingTestSuite extends AbstractTestSuite {
         return Arrays.asList(
                 RosterVersioning.class,
                 StreamManagement.class,
-                CSI.class,
+                MessageCarbons.class,
                 Blocking.class,
                 MAM.class,
                 Push.class,
                 EntityCapabilities.class,
                 MultiUserChat.class,
                 HttpUpload.class,
-                PEP.class
+                PEP.class,
+                CSI.class,
+                Proxy65.class
         );
     }
 

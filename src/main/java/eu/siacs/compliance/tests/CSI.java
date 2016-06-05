@@ -1,26 +1,19 @@
 package eu.siacs.compliance.tests;
 
+import eu.siacs.compliance.extensions.csi.ClientStateIndication;
 import rocks.xmpp.core.session.XmppClient;
+import rocks.xmpp.core.stream.model.StreamFeature;
 
-import java.util.Arrays;
-import java.util.List;
-
-public class CSI extends AbstractDiscoTest {
+public class CSI extends AbstractStreamFeatureTest {
 
     public CSI(XmppClient client) {
         super(client);
     }
 
     @Override
-    List<String> getNamespaces() {
-        return Arrays.asList("urn:xmpp:carbons:2");
+    Class<? extends StreamFeature> getStreamFeature() {
+        return ClientStateIndication.class;
     }
-
-    @Override
-    boolean checkOnServer() {
-        return true;
-    }
-
 
     @Override
     public String getName() {

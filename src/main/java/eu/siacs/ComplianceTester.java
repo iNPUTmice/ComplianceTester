@@ -6,7 +6,6 @@ import eu.siacs.compliance.suites.TestSuiteFactory;
 import rocks.xmpp.addr.Jid;
 import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.sasl.AuthenticationException;
-import rocks.xmpp.core.session.XmppClient;
 
 public class ComplianceTester {
 
@@ -18,12 +17,13 @@ public class ComplianceTester {
         }
         Jid jid = Jid.of(args[0]);
         String password = args[1];
-        XmppClient xmppClient = XmppClient.create(jid.getDomain());
-        try {
-            xmppClient.connect();
-            xmppClient.login(jid.getLocal(), password);
+        runTestSuite(EverythingTestSuite.class, jid, password);
+    }
+
+    private static void runTestSuite(Class <? extends AbstractTestSuite> clazz, Jid jid, String password) {
+         try {
             try {
-                AbstractTestSuite testSuite = TestSuiteFactory.create(EverythingTestSuite.class, xmppClient);
+                AbstractTestSuite testSuite = TestSuiteFactory.create(clazz, jid, password);
                 System.out.println("Use compliance suite '"+testSuite.getName()+"' to test "+jid.getDomain()+"\n");
                 testSuite.run();
                 System.out.println("\n"+testSuite.getName() + ": " + testSuite.result());
