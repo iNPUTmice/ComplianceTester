@@ -24,8 +24,9 @@ public class ComplianceTester {
             xmppClient.login(jid.getLocal(), password);
             try {
                 AbstractTestSuite testSuite = TestSuiteFactory.create(EverythingTestSuite.class, xmppClient);
+                System.out.println("Use compliance suite '"+testSuite.getName()+"' to test "+jid.getDomain()+"\n");
                 testSuite.run();
-                System.out.println(testSuite.getName() + ": " + testSuite.result());
+                System.out.println("\n"+testSuite.getName() + ": " + testSuite.result());
             } catch (AbstractTestSuite.TestSuiteCreationException e) {
                 e.printStackTrace();
                 System.out.println("Test suite creation failed");
