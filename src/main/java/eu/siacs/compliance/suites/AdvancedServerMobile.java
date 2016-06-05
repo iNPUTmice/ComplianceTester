@@ -27,6 +27,6 @@ public class AdvancedServerMobile extends AdvancedServerCore {
 
     @Override
     public String getName() {
-        return "Advanced Server IM Compliance Suite";
+        return "Advanced Server Mobile Compliance Suite";
     }
 }
