@@ -7,7 +7,7 @@ You can easily mix and match various test cases to compose your own compliance s
 
 Build with ```mvn package``` (needs Java 8)
 
-Run with ```java -jar target/ComplianceTester.jar username@domain password```
+Run with ```java -jar target/ComplianceTester-0.1.jar username@domain password```
 
 Example output:
 ```

@@ -12,6 +12,7 @@ public class TestSuiteFactory {
     public static AbstractTestSuite create(Class <? extends AbstractTestSuite> clazz, Jid jid, String password) throws AbstractTestSuite.TestSuiteCreationException {
         XmppSessionConfiguration configuration = XmppSessionConfiguration.builder()
                 .extensions(Extension.of(ClientStateIndication.class))
+                .initialPresence(null)
                 .build();
         final XmppClient client = XmppClient.create(jid.getDomain(),configuration);
         try {

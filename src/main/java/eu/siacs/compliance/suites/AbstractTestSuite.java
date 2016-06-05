@@ -27,7 +27,7 @@ public abstract class AbstractTestSuite {
 
     public void run() throws XmppException {
         mXmppClient.connect();
-        mXmppClient.login(mJid.getLocal(), mPassword);
+        mXmppClient.login(mJid.getLocal(), mPassword, "ComplianceTester");
         for(Class<? extends AbstractTest> test : getTests()) {
             run(test);
         }
