@@ -1,6 +1,6 @@
 package eu.siacs.compliance;
 
-import eu.siacs.compliance.extensions.csi.ClientStateIndication;
+import eu.siacs.extensions.csi.ClientStateIndication;
 import eu.siacs.compliance.suites.AbstractTestSuite;
 import rocks.xmpp.addr.Jid;
 import rocks.xmpp.core.session.Extension;

@@ -1,6 +1,6 @@
 package eu.siacs.compliance.tests;
 
-import eu.siacs.compliance.extensions.csi.ClientStateIndication;
+import eu.siacs.extensions.csi.ClientStateIndication;
 import rocks.xmpp.core.session.XmppClient;
 import rocks.xmpp.core.stream.model.StreamFeature;
 

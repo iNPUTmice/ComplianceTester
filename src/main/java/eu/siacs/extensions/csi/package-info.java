@@ -1,6 +1,6 @@
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSchema(namespace = ClientStateIndication.NAMESPACE, elementFormDefault = XmlNsForm.QUALIFIED)
-package eu.siacs.compliance.extensions.csi;
+package eu.siacs.extensions.csi;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
