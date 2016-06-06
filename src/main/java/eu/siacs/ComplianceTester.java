@@ -13,12 +13,23 @@ public class ComplianceTester {
 
 
     public static void main(String[] args) {
-        if (args.length != 2) {
-            System.err.println("java -jar ComplianceTester.jar username@domain.tld password");
-            System.exit(1);
-        }
         Jid jid = Jid.of(args[0]);
-        String password = args[1];
+        String password;
+        if (args.length < 1 || args.length > 2) {
+            System.err.println("java -jar ComplianceTester.jar username@domain.tld [password]");
+            System.exit(1);
+            return;
+        } else if (args.length == 2) {
+            password = args[1];
+            AccountStore.storePassword(jid, password);
+        } else {
+            password = AccountStore.getPassword(jid);
+            if (password == null) {
+                System.err.println("password for "+jid+ " was not stored");
+                System.exit(1);
+                return;
+            }
+        }
         List<Class <? extends AbstractTestSuite>> testSuites = Arrays.asList(
                 AdvancedServerCore.class,
                 AdvancedServerIM.class,
