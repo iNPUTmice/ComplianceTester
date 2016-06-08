@@ -43,16 +43,6 @@ public abstract class AbstractServiceTest extends AbstractTest {
            return Result.FAILED;
         }
         return Result.FAILED;
-
-        //this is how it should be. but it throws an exeception if one of the items fails
-        /*
-        AsyncResult<List<Item>> result = manager.discoverServices(getNamespace());
-        try {
-            return result.getResult(10, TimeUnit.SECONDS).size() >= 1 ? Result.PASSED : Result.FAILED;
-        } catch (Exception e) {
-           return Result.FAILED;
-        }
-        */
     }
 
     public abstract String getNamespace();

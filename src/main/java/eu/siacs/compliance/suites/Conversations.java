@@ -25,6 +25,11 @@ public class Conversations extends AdvancedServerIM {
     }
 
     @Override
+    protected void preHook() {
+        printServerVersion();
+    }
+
+    @Override
     public String getName() {
         return "Conversations Compliance Suite";
     }

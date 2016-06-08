@@ -6,6 +6,8 @@ import eu.siacs.compliance.TestFactory;
 import rocks.xmpp.addr.Jid;
 import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.session.XmppClient;
+import rocks.xmpp.extensions.version.SoftwareVersionManager;
+import rocks.xmpp.extensions.version.model.SoftwareVersion;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -28,9 +30,11 @@ public abstract class AbstractTestSuite {
     public void run() throws XmppException {
         mXmppClient.connect();
         mXmppClient.login(mJid.getLocal(), mPassword, "ComplianceTester");
+        preHook();
         for(Class<? extends AbstractTest> test : getTests()) {
             run(test);
         }
+        postHook();
         mXmppClient.close();
         int passed = Collections.frequency(mTestResults.values(),Result.PASSED);
         System.out.println("passed "+passed+"/"+mTestResults.size());
@@ -50,6 +54,24 @@ public abstract class AbstractTestSuite {
         } catch (TestFactory.TestCreationException e) {
            System.err.println("failed to create test for class "+clazz.toString());
             mTestResults.put(clazz, Result.FAILED);
+        }
+    }
+
+    protected void preHook() {
+
+    }
+
+    protected void postHook() {
+
+    }
+
+    protected void printServerVersion() {
+        final SoftwareVersionManager softwareVersionManager = mXmppClient.getManager(SoftwareVersionManager.class);
+        try {
+            SoftwareVersion softwareVersion = softwareVersionManager.getSoftwareVersion(mXmppClient.getDomain()).getResult();
+            System.out.println("Server is "+softwareVersion.getName()+" "+softwareVersion.getVersion());
+        } catch (XmppException e) {
+            //ignored
         }
     }
 
