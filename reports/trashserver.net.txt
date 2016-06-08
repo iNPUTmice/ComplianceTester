@@ -36,6 +36,7 @@ Advanced Server Mobile Compliance Suite: FAILED
 
 Use compliance suite 'Conversations Compliance Suite' to test trashserver.net
 
+Server is Prosody 0.9 nightly build 265 (2016-05-21, ad0b15f253ee)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
