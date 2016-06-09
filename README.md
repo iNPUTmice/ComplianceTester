@@ -5,6 +5,15 @@ Use this tool to test your XMPP server for compatibility with various compliance
 
 You can easily mix and match various test cases to compose your own compliance suite or you can use a preexisting compliance suite.
 
+###Why compliance?
+XMPP is an extensible and living standard. Requirments shift over time and thus new extensions (called XEPs) get developed. While server implementors usually react quite fast and are able to cater to those needs it's the server operators who don't upgrade to the latest version or don't enable certain features.
+
+Picking the right extensions to implement or enable isn't always easy. For this reason the XSF has published [XEP-0375 XMPP Compliance Suites](https://xmpp.org/extensions/xep-0375.html) listing the most important extensions to date.
+
+This tool helps you to asses if your server supports those compliance profiles. It will also test for the slightly more comprehensive *Conversations compliance suite*. [Conversations](https://conversations.im) is the technology leader in mobile XMPP instant messaging and aims to provide its user with an experience that is a par with proprietary instant messaging solutions.
+
+###Usage
+
 Build with ```mvn package``` (needs Java 8)
 
 Run with ```java -jar target/ComplianceTester-0.1.jar username@domain password```
