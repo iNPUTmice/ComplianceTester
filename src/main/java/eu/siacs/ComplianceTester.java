@@ -23,11 +23,24 @@ public class ComplianceTester {
             password = args[1];
             AccountStore.storePassword(jid, password);
         } else {
-            password = AccountStore.getPassword(jid);
-            if (password == null) {
-                System.err.println("password for "+jid+ " was not stored");
-                System.exit(1);
-                return;
+            String storedPassword = AccountStore.getPassword(jid);
+            if (storedPassword != null) {
+                password = storedPassword;
+            } else {
+                System.err.println("password for "+jid+ " was not stored. trying to register");
+                try {
+                    password = RegistrationHelper.register(jid);
+                    AccountStore.storePassword(jid, password);
+                } catch (RegistrationHelper.RegistrationNotSupported e) {
+                    System.err.println("server "+jid.getDomain()+" does not support registration");
+                    System.exit(1);
+                    return;
+                } catch (RegistrationHelper.RegistrationFailed e) {
+                    System.out.println("registration failed on server "+jid.getDomain());
+                    System.exit(1);
+                    return;
+                }
+
             }
         }
         List<Class <? extends AbstractTestSuite>> testSuites = Arrays.asList(
