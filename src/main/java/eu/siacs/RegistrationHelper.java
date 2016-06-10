@@ -9,11 +9,15 @@ import rocks.xmpp.extensions.register.model.Registration;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
-public class RegistrationHelper {
-    public static String register(Jid jid) throws RegistrationFailed, RegistrationNotSupported {
+class RegistrationHelper {
+    static String register(Jid jid) throws RegistrationFailed, RegistrationNotSupported {
         XmppClient client = XmppClient.create(jid.getDomain());
         try {
             client.connect(jid);
+        } catch(XmppException e) {
+            throw new RegistrationFailed("unable to connect to server");
+        }
+        try {
             RegistrationManager registrationManager = client.getManager(RegistrationManager.class);
             if (registrationManager.isRegistrationSupported().getResult()) {
                 String password = new BigInteger(64, new SecureRandom()).toString(36);
@@ -27,19 +31,18 @@ public class RegistrationHelper {
                 throw new RegistrationNotSupported();
             }
         } catch (XmppException e) {
-            throw new RegistrationFailed();
+            throw new RegistrationFailed(e.getMessage());
         }
     }
 
-    private abstract static class RegistrationException extends Exception {
+
+    static class RegistrationNotSupported extends Exception {
 
     }
 
-    public static class RegistrationNotSupported extends RegistrationException {
-
-    }
-
-    public static class RegistrationFailed extends RegistrationException {
-
+    static class RegistrationFailed extends Exception {
+        RegistrationFailed(String message) {
+            super(message);
+        }
     }
 }

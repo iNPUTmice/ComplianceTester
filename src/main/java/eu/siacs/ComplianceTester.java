@@ -36,7 +36,7 @@ public class ComplianceTester {
                     System.exit(1);
                     return;
                 } catch (RegistrationHelper.RegistrationFailed e) {
-                    System.out.println("registration failed on server "+jid.getDomain());
+                    System.out.println("registration failed on server "+jid.getDomain()+" "+e.getMessage());
                     System.exit(1);
                     return;
                 }
