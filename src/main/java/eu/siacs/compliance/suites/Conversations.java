@@ -20,7 +20,7 @@ public class Conversations extends AdvancedServerIM {
                 CSI.class,
                 HttpUpload.class,
                 Proxy65.class,
-                PushOnServer.class
+                Push.class
         ).stream()).collect(Collectors.toList());
     }
 
