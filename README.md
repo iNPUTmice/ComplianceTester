@@ -42,3 +42,8 @@ Conversations Compliance Suite: FAILED
 This tool will save your accounts and passwords into a file called ```accounts.xml```. When you invoke it a second time you can omit the password.
 
 There is also a very tiny wrapper script called ```runall.sh``` invoking that will run the compliance tester with all known accounts and save the output to ```reports/$servername```.
+
+###Reports
+Full reports can be found in the directory ```reports```. Please create a pull request if you want your server to be included.
+
+Submitted data can be processed and [displayed in a table](https://gultsch.de/compliance.html).
