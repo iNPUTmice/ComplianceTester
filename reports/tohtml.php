@@ -62,27 +62,32 @@ function comp_header($a, $b) {
   }
   return ($count_a > $count_b) ? -1 : 1;
 }
-function count_passed($report) {
-  $count = 0;
-  foreach($report as $row) {
-    if ($row === 'PASSED') {
-      $count++;
-    }
-  }
-  return $count;
-}
 function comp_report($a, $b) {
-  $count_a = count_passed($a);
-  $count_b = count_passed($b);
+  $count_a = calc_score($a);
+  $count_b = calc_score($b);
   if ($count_a == $count_b) {
     return 0;
   }
   return ($count_a > $count_b) ? -1 : 1;
 }
+function calc_score($report) {
+  $headers = $GLOBALS["headers"];
+  $score = 0;
+  $i = 1;
+  foreach($headers as $key) {
+    if (array_key_exists($key,$report) && 'PASSED' === $report[$key]) {
+      $score += pow(2,$i);
+    }
+    $i++;
+  }
+  return $score;
+}
 $reports = json_decode(file_get_contents('complete.json'),true);
 $headers = array_keys(reset($reports));
-uasort($reports, "comp_report");
-usort($headers, "comp_header");
+if (count($argv) >= 2 && $argv[1] === 'ranked') {
+  usort($headers, "comp_header");
+  uasort($reports, "comp_report");
+}
 ?>
 <table>
   <thead>
