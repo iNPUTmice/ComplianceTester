@@ -16,10 +16,10 @@ running XEP-0280: Message Carbons…		PASSED
 running XEP-0191: Blocking Command…		PASSED
 running XEP-0045: Multi-User Chat…		PASSED
 running XEP-0198: Stream Management…		PASSED
-running XEP-0313: Message Archive Management…		PASSED
-passed 8/8
+running XEP-0313: Message Archive Management…		FAILED
+passed 7/8
 
-Advanced Server IM Compliance Suite: PASSED
+Advanced Server IM Compliance Suite: FAILED
 
 
 Use compliance suite 'Advanced Server Mobile Compliance Suite' to test xmpp.zone
@@ -44,12 +44,12 @@ running XEP-0280: Message Carbons…		PASSED
 running XEP-0191: Blocking Command…		PASSED
 running XEP-0045: Multi-User Chat…		PASSED
 running XEP-0198: Stream Management…		PASSED
-running XEP-0313: Message Archive Management…		PASSED
+running XEP-0313: Message Archive Management…		FAILED
 running XEP-0352: Client State Indication…		PASSED
 running XEP-0363: HTTP File Upload…		PASSED
 running XEP-0065: SOCKS5 Bytestreams (Proxy)…		PASSED
 running XEP-0357: Push Notifications…		FAILED
-passed 11/12
+passed 10/12
 
 Conversations Compliance Suite: FAILED
 
