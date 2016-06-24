@@ -11,6 +11,9 @@
         font-size: 13pt;
         background-color: #fafafa;
       }
+      table tbody tr td {
+        white-space: nowrap;
+      }
       table tbody tr td.passed {
         background-color: #43a047;
       }
