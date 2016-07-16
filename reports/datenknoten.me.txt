@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test datenknoten.me
 
-Server is Prosody 0.10 nightly build 261 (2016-05-30, 6943b1dd4e3d)
+Server is Prosody 0.10 nightly build 267 (2016-06-28, 72e48bddf617)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED

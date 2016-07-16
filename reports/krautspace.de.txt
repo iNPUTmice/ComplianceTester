@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: FAILED
 
 Use compliance suite 'Conversations Compliance Suite' to test krautspace.de
 
-Server is Prosody 0.10 nightly build 264 (2016-06-12, 82d8c11ab0cb)
+Server is Prosody 0.10 nightly build 273 (2016-07-14, b43cbbbb806f)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED

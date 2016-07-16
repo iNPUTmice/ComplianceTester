@@ -47,9 +47,9 @@ running XEP-0198: Stream Management…		PASSED
 running XEP-0313: Message Archive Management…		PASSED
 running XEP-0352: Client State Indication…		PASSED
 running XEP-0363: HTTP File Upload…		PASSED
-running XEP-0065: SOCKS5 Bytestreams (Proxy)…		FAILED
+running XEP-0065: SOCKS5 Bytestreams (Proxy)…		PASSED
 running XEP-0357: Push Notifications…		FAILED
-passed 10/12
+passed 11/12
 
 Conversations Compliance Suite: FAILED
 
