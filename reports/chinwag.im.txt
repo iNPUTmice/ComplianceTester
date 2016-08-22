@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test chinwag.im
 
-Server is Prosody 0.10 nightly build 270 (2016-07-09, c415a3fd4485)
+Server is Prosody 0.10 nightly build 287 (2016-08-20, b8c03df6e8ca)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
