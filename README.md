@@ -1,7 +1,7 @@
 Compliance Tester for XMPP Servers
 ==================================
 
-Use this tool to test your XMPP server for compatibility with various compliance suits.
+Use this tool to test your XMPP server for compatibility with various compliance suites.
 
 You can easily mix and match various test cases to compose your own compliance suite or you can use a preexisting compliance suite.
 
