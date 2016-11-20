@@ -27,16 +27,16 @@ Use compliance suite 'Advanced Server Mobile Compliance Suite' to test neko.im
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running XEP-0198: Stream Management…		PASSED
-running XEP-0352: Client State Indication…		FAILED
-running XEP-0357: Push Notifications…		FAILED
-passed 3/5
+running XEP-0352: Client State Indication…		PASSED
+running XEP-0357: Push Notifications…		PASSED
+passed 5/5
 
-Advanced Server Mobile Compliance Suite: FAILED
+Advanced Server Mobile Compliance Suite: PASSED
 
 
 Use compliance suite 'Conversations Compliance Suite' to test neko.im
 
-Server is Prosody 0.10 nightly build 267 (2016-06-28, 72e48bddf617)
+Server is Prosody 0.10 nightly build 304 (2016-10-18, c420a38db5ef)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
@@ -45,11 +45,11 @@ running XEP-0191: Blocking Command…		PASSED
 running XEP-0045: Multi-User Chat…		PASSED
 running XEP-0198: Stream Management…		PASSED
 running XEP-0313: Message Archive Management…		FAILED
-running XEP-0352: Client State Indication…		FAILED
-running XEP-0363: HTTP File Upload…		FAILED
+running XEP-0352: Client State Indication…		PASSED
+running XEP-0363: HTTP File Upload…		PASSED
 running XEP-0065: SOCKS5 Bytestreams (Proxy)…		PASSED
-running XEP-0357: Push Notifications…		FAILED
-passed 8/12
+running XEP-0357: Push Notifications…		PASSED
+passed 11/12
 
 Conversations Compliance Suite: FAILED
 

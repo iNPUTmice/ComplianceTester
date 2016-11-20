@@ -12,14 +12,14 @@ Use compliance suite 'Advanced Server IM Compliance Suite' to test tchncs.de
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
-running XEP-0280: Message Carbons…		PASSED
-running XEP-0191: Blocking Command…		PASSED
+running XEP-0280: Message Carbons…		FAILED
+running XEP-0191: Blocking Command…		FAILED
 running XEP-0045: Multi-User Chat…		PASSED
 running XEP-0198: Stream Management…		PASSED
 running XEP-0313: Message Archive Management…		PASSED
-passed 8/8
+passed 6/8
 
-Advanced Server IM Compliance Suite: PASSED
+Advanced Server IM Compliance Suite: FAILED
 
 
 Use compliance suite 'Advanced Server Mobile Compliance Suite' to test tchncs.de
@@ -36,12 +36,12 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test tchncs.de
 
-Server is Prosody 0.10 nightly build 284 (2016-08-13, f549587b8c06)
+Server is Prosody 0.9.11
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
-running XEP-0280: Message Carbons…		PASSED
-running XEP-0191: Blocking Command…		PASSED
+running XEP-0280: Message Carbons…		FAILED
+running XEP-0191: Blocking Command…		FAILED
 running XEP-0045: Multi-User Chat…		PASSED
 running XEP-0198: Stream Management…		PASSED
 running XEP-0313: Message Archive Management…		PASSED
@@ -49,8 +49,8 @@ running XEP-0352: Client State Indication…		PASSED
 running XEP-0363: HTTP File Upload…		PASSED
 running XEP-0065: SOCKS5 Bytestreams (Proxy)…		PASSED
 running XEP-0357: Push Notifications…		PASSED
-passed 12/12
+passed 10/12
 
-Conversations Compliance Suite: PASSED
+Conversations Compliance Suite: FAILED
 
 
