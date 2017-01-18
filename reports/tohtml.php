@@ -3,6 +3,11 @@
 <html>
   <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <title>XMPP Compliance Suite 2016: Server Test Results</title>
+    <meta property="og:description" content="An overview over the extensions (XEPs) that are enabled on various Jabber/XMPP servers. If all extensions are enabled the server passes the XMPP Compliance Suite 2016.">
+    <meta name="description" content="An overview over the extensions (XEPs) that are enabled on various Jabber/XMPP servers. If all extensions are enabled the server passes the XMPP Compliance Suite 2016.">
+    <meta property="og:locale" content="en_US">
+    <meta charset="UTF-8">
     <style type="text/css">
       body {
         color: rgba(0,0,0,0.87);
@@ -40,6 +45,23 @@
       }
       p.small {
         font-size: 10pt;
+      }
+      div.banner {
+	margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 12pt;
+        padding-left: 10pt;
+        padding-right: 11pt;
+	width: 60%;
+        min-width: 640px;
+        max-width: 1024px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(0,0,0,0.12);
+      }
+      .banner p {
+        color: rgba(0,0,0,0.54);
+        font-size: 11pt;
       }
     </style>
   </head>
@@ -92,6 +114,11 @@ if (count($argv) >= 2 && $argv[1] === 'ranked') {
   uasort($reports, "comp_report");
 }
 ?>
+<div class="banner">
+  <p><strong>Advertisement</strong><br>Are looking for an XMPP server that is very well maintained, always has the latest features and is running in a German data center?
+<br>Are you willing to spend a little money for a reliable service? Have a look at <a href="https://account.conversations.im">conversations.im</a>. Your first six month are free. No cancelation required.</p>
+  <p>We are also offering <a href="https://account.conversations.im/domain">Jabber/XMPP domain hosting</a> if you want to bring your own domain.</p>
+</div>
 <table>
   <thead>
     <tr>
