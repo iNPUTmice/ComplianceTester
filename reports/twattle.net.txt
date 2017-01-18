@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: FAILED
 
 Use compliance suite 'Conversations Compliance Suite' to test twattle.net
 
-Server is Prosody 0.9 nightly build 270 (2016-09-27, 99abf5a5d8d3)
+Server is Prosody 0.9 nightly build 276 (2017-01-04, 00bca79ae778)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED

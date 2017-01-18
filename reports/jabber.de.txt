@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test jabber.de
 
-Server is Prosody 0.9.11
+Server is Prosody 0.9.12
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED

@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test yax.im
 
-Server is Prosody 0.10 nightly build 304 (2016-10-18, c420a38db5ef)
+Server is Prosody 0.10 nightly build 330 (2017-01-04, 34ca48325ce7)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
