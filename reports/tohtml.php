@@ -108,7 +108,13 @@ function calc_score($report) {
   return $score;
 }
 $reports = json_decode(file_get_contents('complete.json'),true);
-$headers = array_keys(reset($reports));
+$headers = array();
+foreach($reports as &$report) {
+  $h = array_keys($report);
+  if (count($h) > count($headers)) {
+    $headers = $h;
+  }
+}
 if (count($argv) >= 2 && $argv[1] === 'ranked') {
   usort($headers, "comp_header");
   uasort($reports, "comp_report");
