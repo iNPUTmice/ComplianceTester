@@ -28,6 +28,10 @@
       table tbody tr td.missing {
         background-color: #757575;
       }
+      table tbody tr td.updated {
+        font-size: x-small;
+        font-style: italic;
+      }
       table tr:hover td.passed {
         background-color: #2e7d32;
       }
@@ -47,12 +51,11 @@
         font-size: 10pt;
       }
       div.banner {
-	margin-left: auto;
+        margin-left: auto;
         margin-right: auto;
-        margin-bottom: 12pt;
         padding-left: 10pt;
         padding-right: 11pt;
-	width: 60%;
+        width: 60%;
         min-width: 640px;
         max-width: 1024px;
         border-width: 1px;
@@ -62,6 +65,25 @@
       .banner p {
         color: rgba(0,0,0,0.54);
         font-size: 11pt;
+      }
+      tr.rotated th:not(.updated) {
+        font-weight: normal;
+        font-size: 80%;
+        text-align: left;
+        height: 175px;
+        white-space: nowrap;
+      }
+      tr.rotated th:not(.updated) > div {
+        transform: 
+        translate(17px, 54px)
+        rotate(315deg);
+        width: 55px;
+      }
+      th.updated {
+        font-weight: normal;
+        font-size: 60%;
+        font-style: italic;
+        vertical-align: bottom;
       }
     </style>
   </head>
@@ -127,33 +149,46 @@ if (count($argv) >= 2 && $argv[1] === 'ranked') {
 </div>
 <table>
   <thead>
-    <tr>
-      <th></th>
+    <tr class="rotated">
       <?php
-        foreach($headers as &$head) {
-          echo "<th>".htmlentities($head)."</th>";
+        if (count($argv) >= 2 && $argv[1] === 'ranked') {
+          echo '<th><a href="compliance.html">sort alphabetically</a></th>'."\n";
+        } else {
+          echo '<th><a href="compliance_ranked.html">sort by ranking</a></th>'."\n";
         }
       ?>
+<?php
+  foreach($headers as &$head) {
+    if (substr($head, 0, 3) === "XEP") {
+      list($head_xep, $head_rest) = explode(": ", $head, 2);
+      echo "      <th><div>".htmlentities($head_xep).":<br>".htmlentities($head_rest)."</div></th>\n";
+    } else {
+      echo "      <th><div>".htmlentities($head)."</div></th>\n";
+    }
+  }
+?>
+<!--      <th class="updated">last update</th>--> 
     </tr>
   </thead>
   <tbody>
-    <?php
-    foreach($reports as $server => $report) {
-      echo '<tr>';
-      echo '<td>'.htmlentities($server).'</td>';
-      foreach($headers as $c) {
-        if (!array_key_exists($c, $report)) {
-          $class = 'missing';
-        } else if ('PASSED' === $report[$c]) {
-          $class = 'passed';
-        } else {
-          $class = 'failed';
-        }
-        echo '<td class="'.$class.'"></td>';
-      }
-      echo '</tr>';
+<?php
+foreach($reports as $server => $report) {
+  echo '    <tr>';
+  echo '<td>'.htmlentities($server).'</td>';
+  foreach($headers as $c) {
+    if (!array_key_exists($c, $report)) {
+      $class = 'missing';
+    } else if ('PASSED' === $report[$c]) {
+      $class = 'passed';
+    } else {
+      $class = 'failed';
     }
-    ?>
+    echo '<td class="'.$class.'"></td>';
+  }
+  //echo '<td class="updated">'.htmlentities($lastupdate).'</td>';
+  echo "</tr>\n";
+}
+?>
   </tbody>
 </table>
 <p class="small">Copyright 2016 <a href="https://gultsch.de">Daniel Gultsch</a> &middot; Data gathered with <a href="https://github.com/iNPUTmice/ComplianceTester">XMPP Compliance Tester</a> &middot; Last update <?= date("Y-m-d")?> (actual data might be older)</p>
