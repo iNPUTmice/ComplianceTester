@@ -31,10 +31,6 @@
       table tbody tr td.missing {
         background-color: #757575;
       }
-      table tbody tr td.updated {
-        font-size: x-small;
-        font-style: italic;
-      }
       table tr:hover td.passed {
         background-color: #2e7d32;
       }
@@ -69,9 +65,6 @@
         color: rgba(0,0,0,0.54);
         font-size: 11pt;
       }
-      th.sortlink {
-        text-align: left;
-      }
       th.rotated {
         font-weight: normal;
         font-size: 80%;
@@ -84,12 +77,6 @@
           translate(17px, 54px)
           rotate(315deg);
         width: 55px;
-      }
-      th.updated {
-        font-weight: normal;
-        font-size: 60%;
-        font-style: italic;
-        vertical-align: bottom;
       }
     </style>
   </head>
@@ -156,13 +143,7 @@ if (count($argv) >= 2 && $argv[1] === 'ranked') {
 <table>
   <thead>
     <tr>
-      <?php
-        if (count($argv) >= 2 && $argv[1] === 'ranked') {
-          echo '<th class=\"sortlink\"><a href="compliance.html">sort alphabetically</a></th>'."\n";
-        } else {
-          echo '<th class=\"sortlink\"><a href="compliance_ranked.html">sort by ranking</a></th>'."\n";
-        }
-      ?>
+      <th></th>
 <?php
   foreach($headers as &$head) {
     if (substr($head, 0, 3) === "XEP") {
@@ -173,7 +154,6 @@ if (count($argv) >= 2 && $argv[1] === 'ranked') {
     }
   }
 ?>
-<!--      <th class="updated">last update</th>--> 
     </tr>
   </thead>
   <tbody>
@@ -191,7 +171,6 @@ foreach($reports as $server => $report) {
     }
     echo '<td class="'.$class.'"></td>';
   }
-  //echo '<td class="updated">'.htmlentities($lastupdate).'</td>';
   echo "</tr>\n";
 }
 ?>
