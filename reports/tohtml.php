@@ -69,17 +69,20 @@
         color: rgba(0,0,0,0.54);
         font-size: 11pt;
       }
-      tr.rotated th:not(.updated) {
+      th.sortlink {
+        text-align: left;
+      }
+      th.rotated {
         font-weight: normal;
         font-size: 80%;
         text-align: left;
         height: 175px;
         white-space: nowrap;
       }
-      tr.rotated th:not(.updated) > div {
-        transform: 
-        translate(17px, 54px)
-        rotate(315deg);
+      th.rotated > div {
+        transform:
+          translate(17px, 54px)
+          rotate(315deg);
         width: 55px;
       }
       th.updated {
@@ -152,21 +155,21 @@ if (count($argv) >= 2 && $argv[1] === 'ranked') {
 </div>
 <table>
   <thead>
-    <tr class="rotated">
+    <tr>
       <?php
         if (count($argv) >= 2 && $argv[1] === 'ranked') {
-          echo '<th><a href="compliance.html">sort alphabetically</a></th>'."\n";
+          echo '<th class=\"sortlink\"><a href="compliance.html">sort alphabetically</a></th>'."\n";
         } else {
-          echo '<th><a href="compliance_ranked.html">sort by ranking</a></th>'."\n";
+          echo '<th class=\"sortlink\"><a href="compliance_ranked.html">sort by ranking</a></th>'."\n";
         }
       ?>
 <?php
   foreach($headers as &$head) {
     if (substr($head, 0, 3) === "XEP") {
       list($head_xep, $head_rest) = explode(": ", $head, 2);
-      echo "      <th><div>".htmlentities($head_xep).":<br>".htmlentities($head_rest)."</div></th>\n";
+      echo "      <th class=\"rotated\"><div>".htmlentities($head_xep).":<br>".htmlentities($head_rest)."</div></th>\n";
     } else {
-      echo "      <th><div>".htmlentities($head)."</div></th>\n";
+      echo "      <th class=\"rotated\"><div>".htmlentities($head)."</div></th>\n";
     }
   }
 ?>
