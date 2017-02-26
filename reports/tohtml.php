@@ -16,6 +16,9 @@
         font-size: 13pt;
         background-color: #fafafa;
       }
+      table {
+        width: 100%;
+      }
       table tbody tr td {
         white-space: nowrap;
       }
