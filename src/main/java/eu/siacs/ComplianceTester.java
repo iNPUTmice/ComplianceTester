@@ -10,6 +10,8 @@ import rocks.xmpp.core.stream.model.errors.Condition;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class ComplianceTester {
 
@@ -45,6 +47,7 @@ public class ComplianceTester {
 
             }
         }
+        System.out.println("Running ComplianceTester v0.1 on " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + "\n");
         List<Class <? extends AbstractTestSuite>> testSuites = Arrays.asList(
                 AdvancedServerCore.class,
                 AdvancedServerIM.class,
