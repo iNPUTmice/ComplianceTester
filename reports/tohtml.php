@@ -18,6 +18,7 @@
       }
       table {
         width: 100%;
+        padding-right: 8em;
       }
       table th.nostretch {
         width: 1%;
