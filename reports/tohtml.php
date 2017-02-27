@@ -19,6 +19,10 @@
       table {
         width: 100%;
       }
+      table th.nostretch {
+        width: 1%;
+        white-space: nowrap;
+      }
       table tbody tr td {
         white-space: nowrap;
       }
@@ -143,7 +147,7 @@ if (count($argv) >= 2 && $argv[1] === 'ranked') {
 <table>
   <thead>
     <tr>
-      <th></th>
+      <th class="nostretch"></th>
 <?php
   foreach($headers as &$head) {
     if (substr($head, 0, 3) === "XEP") {
