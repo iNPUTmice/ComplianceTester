@@ -16,6 +16,6 @@ public class RosterVersioning extends AbstractStreamFeatureTest {
 
     @Override
     public String getName() {
-        return "Roster Versioning";
+        return "XEP-0237: Roster Versioning";
     }
 }
