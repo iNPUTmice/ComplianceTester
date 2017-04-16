@@ -13,7 +13,7 @@ public class MAM extends AbstractDiscoTest {
 
     @Override
     List<String> getNamespaces() {
-        return Arrays.asList("urn:xmpp:mam:0","urn:xmpp:mam:1");
+        return Arrays.asList("urn:xmpp:mam:0","urn:xmpp:mam:1","urn:xmpp:mam:2");
     }
 
     @Override
