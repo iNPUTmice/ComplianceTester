@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: FAILED
 
 Use compliance suite 'Conversations Compliance Suite' to test tchncs.de
 
-Server is Prosody 0.10 nightly build 373 (2017-03-31, 8a7c4497569a)
+Server is Prosody 0.10 nightly build 386 (2017-04-20, 927b9c5cc17a)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
