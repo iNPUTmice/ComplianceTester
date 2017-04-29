@@ -47,7 +47,6 @@ public class XmppOverTls extends AbstractTest {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
             return Result.FAILED;
         }
         return Result.FAILED;

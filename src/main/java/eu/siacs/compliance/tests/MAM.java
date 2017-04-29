@@ -18,7 +18,7 @@ public class MAM extends AbstractDiscoTest {
 
     @Override
     boolean checkOnServer() {
-        return true;
+        return false;
     }
 
 
