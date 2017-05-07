@@ -15,12 +15,12 @@
         <dependency>
             <groupId>rocks.xmpp</groupId>
             <artifactId>xmpp-core-client</artifactId>
-            <version>0.7.0</version>
+            <version>0.7.4</version>
         </dependency>
         <dependency>
             <groupId>rocks.xmpp</groupId>
             <artifactId>xmpp-extensions-client</artifactId>
-            <version>0.7.0</version>
+            <version>0.7.4</version>
         </dependency>
         <dependency>
             <groupId>de.measite.minidns</groupId>

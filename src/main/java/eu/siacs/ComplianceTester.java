@@ -2,12 +2,14 @@ package eu.siacs;
 
 import eu.siacs.compliance.suites.*;
 import eu.siacs.compliance.TestSuiteFactory;
+import eu.siacs.utils.ExceptionUtils;
 import rocks.xmpp.addr.Jid;
 import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.sasl.AuthenticationException;
 import rocks.xmpp.core.stream.StreamErrorException;
 import rocks.xmpp.core.stream.model.errors.Condition;
 
+import java.security.InvalidAlgorithmParameterException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -86,7 +88,11 @@ public class ComplianceTester {
                 }
             }
         } catch (XmppException e) {
-            e.printStackTrace();
+            if (ExceptionUtils.getRootCause(e) instanceof InvalidAlgorithmParameterException) {
+                System.err.println("The ComplianceTester can not handle DH key sizes above 2048 bit. Modify your Prosody to use the default TLS configuration.");
+            } else {
+                System.err.println(e.getMessage());
+            }
         }
     }
 }
