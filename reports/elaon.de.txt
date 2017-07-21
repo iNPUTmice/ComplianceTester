@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test elaon.de
 
-Server is Prosody trunk nightly build 764 (2017-03-28, ecb110f45c92)
+Server is Prosody trunk nightly build 789 (2017-06-25, a6574fdf8734)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED

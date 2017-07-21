@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test jabber.hot-chilli.net
 
-Server is Prosody 0.9 nightly build 280 (2017-04-17, 8d1fd6d34bda)
+Server is Prosody 0.9 nightly build 283 (2017-06-13, a55eb6c3b45c)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
