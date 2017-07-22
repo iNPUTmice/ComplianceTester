@@ -121,8 +121,8 @@ if (count($argv) >= 2 && $argv[1] === 'ranked') {
 }
 ?>
 <div class="banner">
-  <p><strong>Advertisement</strong><br>Are looking for an XMPP server that is very well maintained, always has the latest features and is running in a German data center?
-<br>Are you willing to spend a little money for a reliable service? Have a look at <a href="https://account.conversations.im">conversations.im</a>. Your first six month are free. No cancelation required.</p>
+  <p><strong>Advertisement</strong><br>Are you looking for an XMPP server that is very well maintained, always has the latest features and is running in a German data center?
+<br>Are you willing to spend a little money for a reliable service? Have a look at <a href="https://account.conversations.im">conversations.im</a>. Your first six month are free. No cancellation required.</p>
   <p>We are also offering <a href="https://account.conversations.im/domain">Jabber/XMPP domain hosting</a> if you want to bring your own domain.</p>
 </div>
 <table>
