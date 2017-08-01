@@ -16,6 +16,14 @@
         font-size: 13pt;
         background-color: #fafafa;
       }
+      table {
+        width: 100%;
+        padding-right: 8em;
+      }
+      table th.nostretch {
+        width: 1%;
+        white-space: nowrap;
+      }
       table tbody tr td {
         white-space: nowrap;
       }
@@ -47,12 +55,11 @@
         font-size: 10pt;
       }
       div.banner {
-	margin-left: auto;
+        margin-left: auto;
         margin-right: auto;
-        margin-bottom: 12pt;
         padding-left: 10pt;
         padding-right: 11pt;
-	width: 60%;
+        width: 60%;
         min-width: 640px;
         max-width: 1024px;
         border-width: 1px;
@@ -62,6 +69,19 @@
       .banner p {
         color: rgba(0,0,0,0.54);
         font-size: 11pt;
+      }
+      th.rotated {
+        font-weight: normal;
+        font-size: 80%;
+        text-align: left;
+        height: 175px;
+        white-space: nowrap;
+      }
+      th.rotated > div {
+        transform:
+          translate(17px, 54px)
+          rotate(315deg);
+        width: 55px;
       }
     </style>
   </head>
@@ -128,32 +148,37 @@ if (count($argv) >= 2 && $argv[1] === 'ranked') {
 <table>
   <thead>
     <tr>
-      <th></th>
-      <?php
-        foreach($headers as &$head) {
-          echo "<th>".htmlentities($head)."</th>";
-        }
-      ?>
+      <th class="nostretch"></th>
+<?php
+  foreach($headers as &$head) {
+    if (substr($head, 0, 3) === "XEP") {
+      list($head_xep, $head_rest) = explode(": ", $head, 2);
+      echo "      <th class=\"rotated\"><div>".htmlentities($head_xep).":<br>".htmlentities($head_rest)."</div></th>\n";
+    } else {
+      echo "      <th class=\"rotated\"><div>".htmlentities($head)."</div></th>\n";
+    }
+  }
+?>
     </tr>
   </thead>
   <tbody>
-    <?php
-    foreach($reports as $server => $report) {
-      echo '<tr>';
-      echo '<td>'.htmlentities($server).'</td>';
-      foreach($headers as $c) {
-        if (!array_key_exists($c, $report)) {
-          $class = 'missing';
-        } else if ('PASSED' === $report[$c]) {
-          $class = 'passed';
-        } else {
-          $class = 'failed';
-        }
-        echo '<td class="'.$class.'"></td>';
-      }
-      echo '</tr>';
+<?php
+foreach($reports as $server => $report) {
+  echo '    <tr>';
+  echo '<td>'.htmlentities($server).'</td>';
+  foreach($headers as $c) {
+    if (!array_key_exists($c, $report)) {
+      $class = 'missing';
+    } else if ('PASSED' === $report[$c]) {
+      $class = 'passed';
+    } else {
+      $class = 'failed';
     }
-    ?>
+    echo '<td class="'.$class.'"></td>';
+  }
+  echo "</tr>\n";
+}
+?>
   </tbody>
 </table>
 <p class="small">Copyright 2016 <a href="https://gultsch.de">Daniel Gultsch</a> &middot; Data gathered with <a href="https://github.com/iNPUTmice/ComplianceTester">XMPP Compliance Tester</a> &middot; Last update <?= date("Y-m-d")?> (actual data might be older)</p>
