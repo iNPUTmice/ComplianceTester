@@ -1,5 +1,10 @@
 Use compliance suite 'Advanced Server Core Compliance Suite' to test conversations.im
 
+running XEP-0115: Entity Capabilities…		PASSED
+running XEP-0163: Personal Eventing Protocol…		PASSED
+passed 2/2
+
+Advanced Server Core Compliance Suite: PASSED
 
 
 Use compliance suite 'Advanced Server IM Compliance Suite' to test conversations.im
