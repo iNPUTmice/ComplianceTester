@@ -131,7 +131,11 @@ if (count($argv) >= 2 && $argv[1] === 'ranked') {
       <th></th>
       <?php
         foreach($headers as &$head) {
-          echo "<th>".htmlentities($head)."</th>";
+          echo "<th>".htmlentities($head);
+          if (strpos($head,'OMEMO') !== false) {
+            echo '&nbsp;<sup><a href="https://github.com/iNPUTmice/ComplianceTester/blob/master/src/main/java/eu/siacs/compliance/tests/OMEMO.java#L12-L17">?</a></sup>';
+          }
+          echo "</th>";
         }
       ?>
     </tr>
