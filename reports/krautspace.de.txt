@@ -50,7 +50,8 @@ running XEP-0363: HTTP File Upload…		FAILED
 running XEP-0065: SOCKS5 Bytestreams (Proxy)…		FAILED
 running XEP-0357: Push Notifications…		FAILED
 running XEP-0368: SRV records for XMPP over TLS…		FAILED
-passed 7/13
+running XEP-0384: OMEMO Encryption…		FAILED
+passed 7/14
 
 Conversations Compliance Suite: FAILED
 
