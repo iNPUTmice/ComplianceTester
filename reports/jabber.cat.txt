@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test jabber.cat
 
-Server is Prosody 0.10 nightly build 347 (2017-02-15, 2b3d0ab67f7d)
+Server is Prosody 0.10 nightly build 410 (2017-08-06, d43012448c1f)
 running XEP-0115: Entity Capabilities…      PASSED
 running XEP-0163: Personal Eventing Protocol…       PASSED
 running Roster Versioning…      PASSED
@@ -49,10 +49,12 @@ running XEP-0352: Client State Indication…      PASSED
 running XEP-0363: HTTP File Upload…     PASSED
 running XEP-0065: SOCKS5 Bytestreams (Proxy)…       PASSED
 running XEP-0357: Push Notifications…       PASSED
-running XEP-0368: SRV records for XMPP over TLS…        PASSED
-passed 13/13
+running XEP-0368: SRV records for XMPP over TLS…        FAILED
+running XEP-0384: OMEMO Encryption…     FAILED
+running XEP-0313: Message Archive Management (MUC)…     PASSED
+passed 13/15
 
-Conversations Compliance Suite: PASSED
+Conversations Compliance Suite: FAILED
 
 
 
