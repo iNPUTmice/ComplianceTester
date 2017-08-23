@@ -1,11 +1,15 @@
 package eu.siacs.compliance.tests;
 
 import eu.siacs.compliance.Result;
+import eu.siacs.utils.TestUtils;
 import rocks.xmpp.addr.Jid;
+import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.session.XmppClient;
+import rocks.xmpp.extensions.disco.ServiceDiscoveryManager;
 import rocks.xmpp.util.concurrent.AsyncResult;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractDiscoTest extends AbstractTest {
@@ -22,15 +26,12 @@ public abstract class AbstractDiscoTest extends AbstractTest {
     @Override
     public Result run() {
         Jid target = checkOnServer() ? Jid.of(client.getConnectedResource().getDomain()) : client.getConnectedResource().asBareJid();
-        for(String namespace : getNamespaces()) {
-            AsyncResult<Boolean> result = client.isSupported(namespace, target);
-            try {
-                Boolean hasCarbons = result.getResult(10, TimeUnit.SECONDS);
-                return hasCarbons ? Result.PASSED : Result.FAILED;
-            } catch (Exception e) {
-                //ignore and go to next namespace
-            }
+        final ServiceDiscoveryManager serviceDiscoveryManager = client.getManager(ServiceDiscoveryManager.class);
+        try {
+            Set<String> features = serviceDiscoveryManager.discoverInformation(target).getResult().getFeatures();
+            return TestUtils.hasAnyone(getNamespaces(),features) ? Result.PASSED : Result.FAILED;
+        } catch (XmppException e) {
+            return Result.FAILED;
         }
-        return Result.FAILED;
     }
 }

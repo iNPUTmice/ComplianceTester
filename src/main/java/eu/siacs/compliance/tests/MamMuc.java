@@ -1,6 +1,7 @@
 package eu.siacs.compliance.tests;
 
 import eu.siacs.compliance.Result;
+import eu.siacs.utils.TestUtils;
 import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.session.XmppClient;
 import rocks.xmpp.extensions.disco.ServiceDiscoveryManager;
@@ -29,8 +30,8 @@ public class MamMuc extends AbstractTest {
             ChatService chatService = chatServices.get(0);
             ChatRoom room = chatService.createRoom(UUID.randomUUID().toString());
             room.enter("test");
-            final Set<String> f = serviceDiscoveryManager.discoverInformation(room.getAddress()).getResult().getFeatures();
-            final boolean mam = f.contains("urn:xmpp:mam:0") || f.contains("urn:xmpp:mam:1") || f.contains("urn:xmpp:mam:2");
+            final Set<String> features = serviceDiscoveryManager.discoverInformation(room.getAddress()).getResult().getFeatures();
+            final boolean mam = TestUtils.hasAnyone(MAM.NAMESPACES,features);
             room.destroy().getResult();
             return mam ? Result.PASSED : Result.FAILED;
         } catch (XmppException e) {
