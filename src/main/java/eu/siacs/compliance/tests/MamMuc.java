@@ -30,7 +30,9 @@ public class MamMuc extends AbstractTest {
             ChatRoom room = chatService.createRoom(UUID.randomUUID().toString());
             room.enter("test");
             final Set<String> f = serviceDiscoveryManager.discoverInformation(room.getAddress()).getResult().getFeatures();
-            return f.contains("urn:xmpp:mam:0") || f.contains("urn:xmpp:mam:1") || f.contains("urn:xmpp:mam:2") ? Result.PASSED : Result.FAILED;
+            final boolean mam = f.contains("urn:xmpp:mam:0") || f.contains("urn:xmpp:mam:1") || f.contains("urn:xmpp:mam:2");
+            room.destroy().getResult();
+            return mam ? Result.PASSED : Result.FAILED;
         } catch (XmppException e) {
             return Result.FAILED;
         }
