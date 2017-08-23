@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * This test checks for the availability of publish-options on the account’s PEP service.
  * publish-options allows a client to efficiently change the access model of the OMEMO key material
  * such that everyone can access it. Without publish-options OMEMO is only available to contacts with
- * mutual presence subscription. 
+ * mutual presence subscription.
  */
 public class OMEMO extends AbstractTest {
 

@@ -22,7 +22,8 @@ public class Conversations extends AdvancedServerIM {
                 Proxy65.class,
                 Push.class,
                 XmppOverTls.class,
-                OMEMO.class
+                OMEMO.class,
+                MamMuc.class
         )).collect(Collectors.toList());
     }
 
