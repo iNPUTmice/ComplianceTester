@@ -3,7 +3,7 @@
 <html>
   <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <title>XMPP Compliance Suite 2016: Server Test Results</title>
+    <title>XMPP Compliance Suite <?php echo date("Y"); ?>: Server Test Results</title>
     <meta property="og:description" content="An overview over the extensions (XEPs) that are enabled on various Jabber/XMPP servers. If all extensions are enabled the server passes the XMPP Compliance Suite 2016.">
     <meta name="description" content="An overview over the extensions (XEPs) that are enabled on various Jabber/XMPP servers. If all extensions are enabled the server passes the XMPP Compliance Suite 2016.">
     <meta property="og:locale" content="en_US">
@@ -160,6 +160,6 @@ if (count($argv) >= 2 && $argv[1] === 'ranked') {
     ?>
   </tbody>
 </table>
-<p class="small">Copyright 2016 <a href="https://gultsch.de">Daniel Gultsch</a> &middot; Data gathered with <a href="https://github.com/iNPUTmice/ComplianceTester">XMPP Compliance Tester</a> &middot; Last update <?= date("Y-m-d")?> (actual data might be older)</p>
+<p class="small">Copyright 2016-<?php echo date("Y"); ?> <a href="https://gultsch.de">Daniel Gultsch</a> and other contributors &middot; Data gathered with <a href="https://github.com/iNPUTmice/ComplianceTester">XMPP Compliance Tester</a> &middot; Last update <?= date("Y-m-d")?> (actual data might be older)</p>
 </body>
 </html>
