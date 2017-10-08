@@ -25,7 +25,7 @@
         <dependency>
             <groupId>de.measite.minidns</groupId>
             <artifactId>minidns-hla</artifactId>
-            <version>0.2.0</version>
+            <version>0.2.4</version>
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
