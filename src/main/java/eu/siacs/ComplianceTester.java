@@ -2,10 +2,14 @@ package eu.siacs;
 
 import eu.siacs.compliance.suites.*;
 import eu.siacs.compliance.TestSuiteFactory;
+import eu.siacs.utils.ExceptionUtils;
 import rocks.xmpp.addr.Jid;
 import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.sasl.AuthenticationException;
+import rocks.xmpp.core.stream.StreamErrorException;
+import rocks.xmpp.core.stream.model.errors.Condition;
 
+import java.security.InvalidAlgorithmParameterException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -56,6 +60,10 @@ public class ComplianceTester {
     }
 
     private static void runTestSuite(Class <? extends AbstractTestSuite> clazz, Jid jid, String password) {
+        runTestSuite(clazz, jid, password, false);
+    }
+
+    private static void runTestSuite(Class <? extends AbstractTestSuite> clazz, Jid jid, String password, boolean rerun) {
          try {
             try {
                 AbstractTestSuite testSuite = TestSuiteFactory.create(clazz, jid, password);
@@ -67,10 +75,24 @@ public class ComplianceTester {
                 System.out.println("Test suite creation failed");
             }
         } catch(AuthenticationException e) {
-            System.err.println("username or password wrong");
-            System.exit(1);
+             System.err.println("username or password wrong");
+             System.exit(1);
+        } catch (StreamErrorException e) {
+            if (e.getCondition() == Condition.POLICY_VIOLATION && !rerun) {
+                System.err.println("Policy violation. Waiting 61s");
+                runTestSuite(clazz, jid, password, true);
+                try {
+                    Thread.sleep(61000);
+                } catch (InterruptedException ie) {
+                    System.err.println("interrupted");
+                }
+            }
         } catch (XmppException e) {
-            e.printStackTrace();
+            if (ExceptionUtils.getRootCause(e) instanceof InvalidAlgorithmParameterException) {
+                System.err.println("The ComplianceTester can not handle DH key sizes above 2048 bit. Modify your Prosody to use the default TLS configuration.");
+            } else {
+                System.err.println(e.getMessage());
+            }
         }
     }
 }

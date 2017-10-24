@@ -16,8 +16,8 @@ running XEP-0280: Message Carbons…		PASSED
 running XEP-0191: Blocking Command…		FAILED
 running XEP-0045: Multi-User Chat…		PASSED
 running XEP-0198: Stream Management…		PASSED
-running XEP-0313: Message Archive Management…		PASSED
-passed 7/8
+running XEP-0313: Message Archive Management…		FAILED
+passed 6/8
 
 Advanced Server IM Compliance Suite: FAILED
 
@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test yax.im
 
-Server is Prosody 0.10 nightly build 276 (2016-07-23, 9e48299799d8)
+Server is Prosody 0.10 nightly build 389 (2017-04-24, 3e443d6791e6)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
@@ -44,12 +44,14 @@ running XEP-0280: Message Carbons…		PASSED
 running XEP-0191: Blocking Command…		FAILED
 running XEP-0045: Multi-User Chat…		PASSED
 running XEP-0198: Stream Management…		PASSED
-running XEP-0313: Message Archive Management…		PASSED
+running XEP-0313: Message Archive Management…		FAILED
 running XEP-0352: Client State Indication…		PASSED
-running XEP-0363: HTTP File Upload…		FAILED
+running XEP-0363: HTTP File Upload…		PASSED
 running XEP-0065: SOCKS5 Bytestreams (Proxy)…		FAILED
 running XEP-0357: Push Notifications…		PASSED
-passed 9/12
+running XEP-0368: SRV records for XMPP over TLS…		FAILED
+running XEP-0384: OMEMO Encryption…		FAILED
+passed 9/14
 
 Conversations Compliance Suite: FAILED
 

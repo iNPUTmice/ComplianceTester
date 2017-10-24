@@ -16,12 +16,15 @@ public class Conversations extends AdvancedServerIM {
 
     @Override
     List<Class<? extends AbstractTest>> getTests() {
-        return Stream.concat(super.getTests().stream(), Arrays.asList(
+        return Stream.concat(super.getTests().stream(), Stream.of(
                 CSI.class,
                 HttpUpload.class,
                 Proxy65.class,
-                Push.class
-        ).stream()).collect(Collectors.toList());
+                Push.class,
+                XmppOverTls.class,
+                OMEMO.class,
+                MamMuc.class
+        )).collect(Collectors.toList());
     }
 
     @Override
