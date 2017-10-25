@@ -1,7 +1,7 @@
 Use compliance suite 'Advanced Server Core Compliance Suite' to test wiuwiu.de
 
-running XEP-0115: Entity Capabilities…		PASSED
-running XEP-0163: Personal Eventing Protocol…		PASSED
+running XEP-0115: Entity Capabilities…          PASSED
+running XEP-0163: Personal Eventing Protocol…           PASSED
 passed 2/2
 
 Advanced Server Core Compliance Suite: PASSED
@@ -9,14 +9,14 @@ Advanced Server Core Compliance Suite: PASSED
 
 Use compliance suite 'Advanced Server IM Compliance Suite' to test wiuwiu.de
 
-running XEP-0115: Entity Capabilities…		PASSED
-running XEP-0163: Personal Eventing Protocol…		PASSED
-running Roster Versioning…		PASSED
-running XEP-0280: Message Carbons…		PASSED
-running XEP-0191: Blocking Command…		PASSED
-running XEP-0045: Multi-User Chat…		PASSED
-running XEP-0198: Stream Management…		PASSED
-running XEP-0313: Message Archive Management…		PASSED
+running XEP-0115: Entity Capabilities…          PASSED
+running XEP-0163: Personal Eventing Protocol…           PASSED
+running Roster Versioning…              PASSED
+running XEP-0280: Message Carbons…              PASSED
+running XEP-0191: Blocking Command…             PASSED
+running XEP-0045: Multi-User Chat…              PASSED
+running XEP-0198: Stream Management…            PASSED
+running XEP-0313: Message Archive Management…           PASSED
 passed 8/8
 
 Advanced Server IM Compliance Suite: PASSED
@@ -24,11 +24,11 @@ Advanced Server IM Compliance Suite: PASSED
 
 Use compliance suite 'Advanced Server Mobile Compliance Suite' to test wiuwiu.de
 
-running XEP-0115: Entity Capabilities…		PASSED
-running XEP-0163: Personal Eventing Protocol…		PASSED
-running XEP-0198: Stream Management…		PASSED
-running XEP-0352: Client State Indication…		PASSED
-running XEP-0357: Push Notifications…		PASSED
+running XEP-0115: Entity Capabilities…          PASSED
+running XEP-0163: Personal Eventing Protocol…           PASSED
+running XEP-0198: Stream Management…            PASSED
+running XEP-0352: Client State Indication…              PASSED
+running XEP-0357: Push Notifications…           PASSED
 passed 5/5
 
 Advanced Server Mobile Compliance Suite: PASSED
@@ -37,22 +37,21 @@ Advanced Server Mobile Compliance Suite: PASSED
 Use compliance suite 'Conversations Compliance Suite' to test wiuwiu.de
 
 Server is Prosody 0.10.0
-running XEP-0115: Entity Capabilities…		PASSED
-running XEP-0163: Personal Eventing Protocol…		PASSED
-running Roster Versioning…		PASSED
-running XEP-0280: Message Carbons…		PASSED
-running XEP-0191: Blocking Command…		PASSED
-running XEP-0045: Multi-User Chat…		PASSED
-running XEP-0198: Stream Management…		PASSED
-running XEP-0313: Message Archive Management…		PASSED
-running XEP-0352: Client State Indication…		PASSED
-running XEP-0363: HTTP File Upload…		PASSED
-running XEP-0065: SOCKS5 Bytestreams (Proxy)…		PASSED
-running XEP-0357: Push Notifications…		PASSED
-running XEP-0368: SRV records for XMPP over TLS…		PASSED
-running XEP-0384: OMEMO Encryption…		PASSED
-running XEP-0313: Message Archive Management (MUC)…		PASSED
-passed 15/15
+running XEP-0115: Entity Capabilities…          PASSED
+running XEP-0163: Personal Eventing Protocol…           PASSED
+running Roster Versioning…              PASSED
+running XEP-0280: Message Carbons…              PASSED
+running XEP-0191: Blocking Command…             PASSED
+running XEP-0045: Multi-User Chat…              PASSED
+running XEP-0198: Stream Management…            PASSED
+running XEP-0313: Message Archive Management…           PASSED
+running XEP-0352: Client State Indication…              PASSED
+running XEP-0363: HTTP File Upload…             PASSED
+running XEP-0065: SOCKS5 Bytestreams (Proxy)…           PASSED
+running XEP-0357: Push Notifications…           PASSED
+running XEP-0368: SRV records for XMPP over TLS…                PASSED
+running XEP-0384: OMEMO Encryption…             FAILED
+running XEP-0313: Message Archive Management (MUC)…             PASSED
+passed 14/15
 
-Conversations Compliance Suite: PASSED
-
+Conversations Compliance Suite: FAILED
