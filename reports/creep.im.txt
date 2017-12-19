@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test creep.im
 
-Server is ejabberd 16.09
+Server is ejabberd 17.09
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
@@ -50,7 +50,9 @@ running XEP-0363: HTTP File Upload…		PASSED
 running XEP-0065: SOCKS5 Bytestreams (Proxy)…		PASSED
 running XEP-0357: Push Notifications…		PASSED
 running XEP-0368: SRV records for XMPP over TLS…		FAILED
-passed 12/13
+running XEP-0384: OMEMO Encryption…		FAILED
+running XEP-0313: Message Archive Management (MUC)…		FAILED
+passed 12/15
 
 Conversations Compliance Suite: FAILED
 
