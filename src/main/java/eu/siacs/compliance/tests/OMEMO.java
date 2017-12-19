@@ -7,6 +7,8 @@ import rocks.xmpp.extensions.disco.model.info.Identity;
 import rocks.xmpp.extensions.disco.model.info.InfoNode;
 import rocks.xmpp.util.concurrent.AsyncResult;
 
+import java.util.Arrays;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -16,6 +18,9 @@ import java.util.concurrent.TimeUnit;
  * mutual presence subscription.
  */
 public class OMEMO extends AbstractTest {
+
+    private static final String PUBLISH_OPTIONS = "http://jabber.org/protocol/pubsub#publish-options";
+    private static final String WHITELISTED = "eu.siacs.conversations.axolotl.whitelisted";
 
     public OMEMO(XmppClient client) {
         super(client);
@@ -27,7 +32,8 @@ public class OMEMO extends AbstractTest {
         AsyncResult<InfoNode> result = manager.discoverInformation(client.getConnectedResource().asBareJid());
         try {
             final InfoNode infoNode = result.get(10, TimeUnit.SECONDS);
-            if (!infoNode.getFeatures().contains("http://jabber.org/protocol/pubsub#publish-options")) {
+            final Set<String> features = infoNode.getFeatures();
+            if (!features.contains(PUBLISH_OPTIONS) && !features.contains(WHITELISTED)) {
                 return Result.FAILED;
             }
             for (Identity identity : infoNode.getIdentities()) {
