@@ -1,3 +1,7 @@
+ComplianceTester.iml
 accounts.xml
 dependency-reduced-pom.xml
 target/
+.idea/
+reports/*.html
+reports/*.json
