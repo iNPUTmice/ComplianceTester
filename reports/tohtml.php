@@ -4,8 +4,12 @@
   <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <title>XMPP Compliance Suite 2016: Server Test Results</title>
-    <meta property="og:description" content="An overview over the extensions (XEPs) that are enabled on various Jabber/XMPP servers. If all extensions are enabled the server passes the XMPP Compliance Suite 2016.">
-    <meta name="description" content="An overview over the extensions (XEPs) that are enabled on various Jabber/XMPP servers. If all extensions are enabled the server passes the XMPP Compliance Suite 2016.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@iNPUTmice">
+    <meta property="og:image" content="https://conversations.im/compliance/cover.png">
+    <meta property="og:title" content="XMPP Compliance Suite - Server Results">
+    <meta property="og:url" content="https://conversations.im/compliance/">
+    <meta property="og:description" content="Pick and choose your Jabber server from a list of compatible servers or check if your current server supports all required features.">
     <meta property="og:locale" content="en_US">
     <meta charset="UTF-8">
     <style type="text/css">
