@@ -15,9 +15,9 @@ This tool helps you to asses if your server supports those compliance profiles. 
 
 ## Usage
 
-Download the compiled [ComplianceTester-0.2.1.jar](https://gultsch.de/files/ComplianceTester-0.2.1.jar) or build with ```mvn package``` (needs Java 8)
+Download the compiled [ComplianceTester-0.2.2.jar](https://gultsch.de/files/ComplianceTester-0.2.2.jar) or build with ```mvn package``` (needs Java 8)
 
-Run with ```java -jar target/ComplianceTester-0.2.1.jar username@domain password```
+Run with ```java -jar target/ComplianceTester-0.2.2.jar username@domain password```
 
 Example output:
 ```
@@ -47,4 +47,4 @@ There is also a very tiny wrapper script called ```runall.sh``` invoking that wi
 ## Reports
 Full reports can be found in the directory ```reports```. Please create a pull request if you want your server to be included.
 
-Submitted data can be processed and [displayed in a table](https://gultsch.de/compliance.html).
+Submitted data can be processed and [displayed in a table](https://conversations.im/compliance/).
