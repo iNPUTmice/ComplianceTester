@@ -4,6 +4,7 @@ import eu.siacs.compliance.Result;
 import eu.siacs.utils.TestUtils;
 import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.session.XmppClient;
+import rocks.xmpp.extensions.data.model.DataForm;
 import rocks.xmpp.extensions.disco.ServiceDiscoveryManager;
 import rocks.xmpp.extensions.muc.ChatRoom;
 import rocks.xmpp.extensions.muc.ChatService;
@@ -12,6 +13,7 @@ import rocks.xmpp.extensions.muc.MultiUserChatManager;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 
 public class MamMuc extends AbstractTest {
     public MamMuc(XmppClient client) {
@@ -27,9 +29,17 @@ public class MamMuc extends AbstractTest {
             if (chatServices.size() < 1) {
                 return Result.FAILED;
             }
-            ChatService chatService = chatServices.get(0);
-            ChatRoom room = chatService.createRoom(UUID.randomUUID().toString());
+            final ChatService chatService = chatServices.get(0);
+            final ChatRoom room = chatService.createRoom(UUID.randomUUID().toString());
             room.enter("test");
+            try {
+                final DataForm.Field mam = room.getConfigurationForm().get().findField("mam");
+                if (mam != null) {
+                    return Result.PASSED;
+                }
+            } catch (ExecutionException | InterruptedException e) {
+                //ignore
+            }
             final Set<String> features = serviceDiscoveryManager.discoverInformation(room.getAddress()).getResult().getFeatures();
             final boolean mam = TestUtils.hasAnyone(MAM.NAMESPACES,features);
             room.destroy().getResult();
