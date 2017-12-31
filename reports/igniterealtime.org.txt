@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: FAILED
 
 Use compliance suite 'Conversations Compliance Suite' to test igniterealtime.org
 
-Server is Openfire 4.2.0 Beta
+Server is Openfire 4.2.1
 running XEP-0115: Entity Capabilities…		FAILED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED

@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test hot-chilli.net
 
-Server is Prosody 0.10 nightly build 440 (2017-10-17, c72db8047440)
+Server is Prosody 0.10 nightly build 451 (2017-11-30, 3d21c63ec03f)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED

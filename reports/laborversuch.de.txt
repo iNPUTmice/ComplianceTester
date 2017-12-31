@@ -1,4 +1,4 @@
-Use compliance suite 'Advanced Server Core Compliance Suite' to test jabjab.de
+Use compliance suite 'Advanced Server Core Compliance Suite' to test laborversuch.de
 
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
@@ -7,7 +7,7 @@ passed 2/2
 Advanced Server Core Compliance Suite: PASSED
 
 
-Use compliance suite 'Advanced Server IM Compliance Suite' to test jabjab.de
+Use compliance suite 'Advanced Server IM Compliance Suite' to test laborversuch.de
 
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
@@ -22,7 +22,7 @@ passed 8/8
 Advanced Server IM Compliance Suite: PASSED
 
 
-Use compliance suite 'Advanced Server Mobile Compliance Suite' to test jabjab.de
+Use compliance suite 'Advanced Server Mobile Compliance Suite' to test laborversuch.de
 
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
@@ -34,9 +34,9 @@ passed 5/5
 Advanced Server Mobile Compliance Suite: PASSED
 
 
-Use compliance suite 'Conversations Compliance Suite' to test jabjab.de
+Use compliance suite 'Conversations Compliance Suite' to test laborversuch.de
 
-Server is ejabberd 17.12
+Server is Prosody 0.10.0
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
@@ -49,11 +49,11 @@ running XEP-0352: Client State Indication…		PASSED
 running XEP-0363: HTTP File Upload…		PASSED
 running XEP-0065: SOCKS5 Bytestreams (Proxy)…		PASSED
 running XEP-0357: Push Notifications…		PASSED
-running XEP-0368: SRV records for XMPP over TLS…		PASSED
+running XEP-0368: SRV records for XMPP over TLS…		FAILED
 running XEP-0384: OMEMO Encryption…		PASSED
-running XEP-0313: Message Archive Management (MUC)…		PASSED
-passed 15/15
+running XEP-0313: Message Archive Management (MUC)…		FAILED
+passed 13/15
 
-Conversations Compliance Suite: PASSED
+Conversations Compliance Suite: FAILED
 
 
