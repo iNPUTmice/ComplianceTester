@@ -4,6 +4,9 @@ import eu.siacs.compliance.Result;
 import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.session.XmppClient;
 import rocks.xmpp.extensions.register.RegistrationManager;
+import rocks.xmpp.extensions.register.model.Registration;
+
+import java.util.concurrent.ExecutionException;
 
 public class InBandRegistrationTest extends AbstractTest {
 
@@ -13,16 +16,17 @@ public class InBandRegistrationTest extends AbstractTest {
 
     @Override
     public Result run() {
-        String domain = client.getConnectedResource().getDomain();
-        XmppClient testClient = XmppClient.create(domain);
-        RegistrationManager registrationManager = testClient.getManager(RegistrationManager.class);
+        final String domain = client.getConnectedResource().getDomain();
+        final XmppClient testClient = XmppClient.create(domain);
         try {
+            testClient.connect();
+            RegistrationManager registrationManager = testClient.getManager(RegistrationManager.class);
             if(registrationManager.isRegistrationSupported().getResult()) {
+                registrationManager.getRegistration().get();
                 return Result.PASSED;
             }
             return Result.FAILED;
-        } catch (XmppException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
             return Result.FAILED;
         }
     }
