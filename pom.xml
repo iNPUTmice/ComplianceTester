@@ -6,7 +6,7 @@
 
     <groupId>eu.siacs</groupId>
     <artifactId>ComplianceTester</artifactId>
-    <version>0.2.2</version>
+    <version>0.2.3</version>
     <packaging>jar</packaging>
 
     <dependencies>
