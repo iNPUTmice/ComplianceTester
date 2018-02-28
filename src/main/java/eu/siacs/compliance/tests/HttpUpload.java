@@ -10,7 +10,7 @@ public class HttpUpload extends AbstractServiceTest {
 
     @Override
     public String getNamespace() {
-        return "urn:xmpp:http:upload";
+        return "urn:xmpp:http:upload:0";
     }
 
 
