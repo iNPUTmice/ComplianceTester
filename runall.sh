@@ -7,7 +7,7 @@ function pwait() {
 for account in `grep entry accounts.xml | awk -F '"' '{print $2}'`; do
   server=$(echo $account | awk -F '@' '{print $2}')
   echo "testing $server"
-  java -jar target/ComplianceTester-0.2.2.jar $account > reports/$server.txt&
+  java -jar target/ComplianceTester-0.2.3.jar $account > reports/$server.txt&
   pwait 5
 done;
 
