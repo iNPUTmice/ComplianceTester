@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test magicbroccoli.de
 
-Server is Prosody 0.10 nightly build 455 (2017-12-11, 384658c7a26a)
+Server is ejabberd 18.01
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED

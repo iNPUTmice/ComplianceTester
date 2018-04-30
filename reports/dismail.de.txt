@@ -1,10 +1,5 @@
 Use compliance suite 'Advanced Server Core Compliance Suite' to test dismail.de
 
-running XEP-0115: Entity Capabilities…		PASSED
-running XEP-0163: Personal Eventing Protocol…		PASSED
-passed 2/2
-
-Advanced Server Core Compliance Suite: PASSED
 
 
 Use compliance suite 'Advanced Server IM Compliance Suite' to test dismail.de
@@ -36,7 +31,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test dismail.de
 
-Server is Prosody hg:d88dc6827675
+Server is Prosody hg:c0e812dd9dfc
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED

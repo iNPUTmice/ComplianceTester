@@ -1,10 +1,5 @@
 Use compliance suite 'Advanced Server Core Compliance Suite' to test neko.im
 
-running XEP-0115: Entity Capabilities…		PASSED
-running XEP-0163: Personal Eventing Protocol…		PASSED
-passed 2/2
-
-Advanced Server Core Compliance Suite: PASSED
 
 
 Use compliance suite 'Advanced Server IM Compliance Suite' to test neko.im
@@ -36,7 +31,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test neko.im
 
-Server is Prosody 0.10 nightly build 398 (2017-05-20, 1dc6efcc420a)
+Server is Prosody 0.10 nightly build 458 (2017-12-29, 9b81c22d5b54)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED

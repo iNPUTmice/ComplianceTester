@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test 5222.de
 
-Server is Prosody 0.10 nightly build 459 (2018-01-06, 47115b0ca133)
+Server is Prosody 0.10 nightly build 468 (2018-03-12, 416b8ae3857d)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
