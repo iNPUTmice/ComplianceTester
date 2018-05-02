@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: FAILED
 
 Use compliance suite 'Conversations Compliance Suite' to test lightwitch.org
 
-Server is Metronome 3.8.9
+Server is Metronome 3.8.21
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
@@ -47,12 +47,12 @@ running XEP-0198: Stream Management…		PASSED
 running XEP-0313: Message Archive Management…		PASSED
 running XEP-0352: Client State Indication…		PASSED
 running XEP-0363: HTTP File Upload…		PASSED
-running XEP-0065: SOCKS5 Bytestreams (Proxy)…		FAILED
+running XEP-0065: SOCKS5 Bytestreams (Proxy)…		PASSED
 running XEP-0357: Push Notifications…		FAILED
-running XEP-0368: SRV records for XMPP over TLS…		FAILED
+running XEP-0368: SRV records for XMPP over TLS…		PASSED
 running XEP-0384: OMEMO Encryption…		PASSED
 running XEP-0313: Message Archive Management (MUC)…		PASSED
-passed 12/15
+passed 14/15
 
 Conversations Compliance Suite: FAILED
 
