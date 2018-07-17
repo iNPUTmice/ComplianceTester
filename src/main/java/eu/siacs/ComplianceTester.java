@@ -17,13 +17,15 @@ public class ComplianceTester {
 
 
     public static void main(String[] args) {
-        Jid jid = Jid.of(args[0]);
         String password;
         if (args.length < 1 || args.length > 2) {
             System.err.println("java -jar ComplianceTester.jar username@domain.tld [password]");
             System.exit(1);
             return;
-        } else if (args.length == 2) {
+        }
+        Jid jid = Jid.of(args[0]);
+
+        if (args.length == 2) {
             password = args[1];
             AccountStore.storePassword(jid, password);
         } else {
