@@ -36,7 +36,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test riotcat.org
 
-Server is Prosody 0.10 nightly build 458 (2017-12-29, 9b81c22d5b54)
+Server is Prosody 0.10 nightly build 489 (2018-06-10, 144666d0ad2f)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED
