@@ -19,6 +19,8 @@ Download the compiled [ComplianceTester-0.2.3.jar](https://gultsch.de/files/Comp
 
 Run with ```java -jar target/ComplianceTester-0.2.3.jar username@domain password```
 
+(For [some Java versions, the command fails with `Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException`](https://stackoverflow.com/questions/43574426/how-to-resolve-java-lang-noclassdeffounderror-javax-xml-bind-jaxbexception-in-j). Work around this by adding `--add-module java.xml.bind` to the command line options.)
+
 Example output:
 ```
 Use compliance suite 'Conversations Compliance Suite' to test conversations.im
