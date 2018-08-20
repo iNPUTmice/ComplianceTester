@@ -1,10 +1,5 @@
 Use compliance suite 'Advanced Server Core Compliance Suite' to test jabber.hot-chilli.net
 
-running XEP-0115: Entity Capabilities…		PASSED
-running XEP-0163: Personal Eventing Protocol…		PASSED
-passed 2/2
-
-Advanced Server Core Compliance Suite: PASSED
 
 
 Use compliance suite 'Advanced Server IM Compliance Suite' to test jabber.hot-chilli.net
@@ -36,7 +31,7 @@ Advanced Server Mobile Compliance Suite: PASSED
 
 Use compliance suite 'Conversations Compliance Suite' to test jabber.hot-chilli.net
 
-Server is Prosody 0.10 nightly build 440 (2017-10-17, c72db8047440)
+Server is Prosody 0.10 nightly build 474 (2018-04-17, 861a7d6c12d8)
 running XEP-0115: Entity Capabilities…		PASSED
 running XEP-0163: Personal Eventing Protocol…		PASSED
 running Roster Versioning…		PASSED

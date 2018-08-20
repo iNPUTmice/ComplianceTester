@@ -9,15 +9,17 @@ You can easily mix and match various test cases to compose your own compliance s
 
 XMPP is an extensible and living standard. Requirments shift over time and thus new extensions (called XEPs) get developed. While server implementors usually react quite fast and are able to cater to those needs it's the server operators who don't upgrade to the latest version or don't enable certain features.
 
-Picking the right extensions to implement or enable isn't always easy. For this reason the XSF has published [XEP-0375 XMPP Compliance Suites](https://xmpp.org/extensions/xep-0375.html) listing the most important extensions to date.
+Picking the right extensions to implement or enable isn't always easy. For this reason the XSF has published [XEP-0387 XMPP Compliance Suites 2018](https://xmpp.org/extensions/xep-0387.html) listing the most important extensions to date.
 
 This tool helps you to asses if your server supports those compliance profiles. It will also test for the slightly more comprehensive *Conversations compliance suite*. [Conversations](https://conversations.im) is the technology leader in mobile XMPP instant messaging and aims to provide its user with an experience that is a par with proprietary instant messaging solutions.
 
 ## Usage
 
-Download the compiled [ComplianceTester-0.2.2.jar](https://gultsch.de/files/ComplianceTester-0.2.2.jar) or build with ```mvn package``` (needs Java 8)
+Download the compiled [ComplianceTester-0.2.3.jar](https://gultsch.de/files/ComplianceTester-0.2.3.jar) or build with ```mvn package``` (needs Java 8)
 
-Run with ```java -jar target/ComplianceTester-0.2.2.jar username@domain password```
+Run with ```java -jar target/ComplianceTester-0.2.3.jar username@domain password```
+
+(For [some Java versions, the command fails with `Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException`](https://stackoverflow.com/questions/43574426/how-to-resolve-java-lang-noclassdeffounderror-javax-xml-bind-jaxbexception-in-j). Work around this by adding `--add-module java.xml.bind` to the command line options.)
 
 Example output:
 ```
