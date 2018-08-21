@@ -19,7 +19,7 @@ Download the compiled [ComplianceTester-0.2.3.jar](https://gultsch.de/files/Comp
 
 Run with ```java -jar target/ComplianceTester-0.2.3.jar username@domain password```
 
-(For [some Java versions, the command fails with `Exception in thread "main" java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException`](https://stackoverflow.com/questions/43574426/how-to-resolve-java-lang-noclassdeffounderror-javax-xml-bind-jaxbexception-in-j). Work around this by adding `--add-module java.xml.bind` to the command line options.)
+On Java 9+ you need to use ```java --add-modules java.xml.bind -jar target/ComplianceTester-0.2.3.jar …``` instead.
 
 Example output:
 ```
@@ -46,7 +46,6 @@ This tool will save your accounts and passwords into a file called ```accounts.x
 
 There is also a very tiny wrapper script called ```runall.sh``` invoking that will run the compliance tester with all known accounts and save the output to ```reports/$servername```.
 
-## Reports
-Full reports can be found in the directory ```reports```. Please create a pull request if you want your server to be included.
+## Online Version
 
-Submitted data can be processed and [displayed in a table](https://conversations.im/compliance/).
+There is an online version of the ComplianceTester available on [compliance.conversations.im](https://compliance.conversations.im).
