@@ -8,8 +8,8 @@ repositories {
 }
 
 dependencies {
-  implementation 'rocks.xmpp:xmpp-core-client:0.7.4'
-  implementation 'rocks.xmpp:xmpp-extensions-client:0.7.4'
+  implementation 'rocks.xmpp:xmpp-core-client:0.8.0'
+  implementation 'rocks.xmpp:xmpp-extensions-client:0.8.0'
   implementation 'de.measite.minidns:minidns-hla:0.2.4'
   implementation 'org.bouncycastle:bcpkix-jdk15on:1.60'
 }
