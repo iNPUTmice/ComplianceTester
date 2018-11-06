@@ -6,7 +6,7 @@ import eu.siacs.utils.ExceptionUtils;
 import rocks.xmpp.addr.Jid;
 import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.sasl.AuthenticationException;
-import rocks.xmpp.core.stream.StreamErrorException;
+import rocks.xmpp.core.stream.model.StreamErrorException;
 import rocks.xmpp.core.stream.model.errors.Condition;
 
 import java.security.InvalidAlgorithmParameterException;

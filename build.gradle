@@ -14,6 +14,10 @@ dependencies {
   implementation 'org.bouncycastle:bcpkix-jdk15on:1.60'
 }
 
+compileJava {
+  options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}
+
 jar {
   manifest {
     attributes 'Main-Class': 'eu.siacs.ComplianceTester'
