@@ -35,6 +35,7 @@ public class MamMuc extends AbstractTest {
             try {
                 final DataForm.Field mam = room.getConfigurationForm().get().findField("mam");
                 if (mam != null) {
+                    room.destroy().getResult();
                     return Result.PASSED;
                 }
             } catch (ExecutionException | InterruptedException e) {
