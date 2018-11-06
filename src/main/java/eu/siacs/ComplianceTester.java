@@ -6,27 +6,39 @@ import eu.siacs.utils.ExceptionUtils;
 import rocks.xmpp.addr.Jid;
 import rocks.xmpp.core.XmppException;
 import rocks.xmpp.core.sasl.AuthenticationException;
-import rocks.xmpp.core.stream.StreamErrorException;
+import rocks.xmpp.core.stream.model.StreamErrorException;
 import rocks.xmpp.core.stream.model.errors.Condition;
 
 import java.security.InvalidAlgorithmParameterException;
 import java.util.Arrays;
 import java.util.List;
 
-public class ComplianceTester {
+import picocli.CommandLine;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
+import picocli.CommandLine.Parameters;
 
+@Command(name = "java -jar ComplianceTester.jar")
+public class ComplianceTester
+    implements Runnable {
+
+    @Option(names = { "-d", "--debug" }, description = "debug option")
+    private boolean debug = false;
+
+    @Parameters(index = "0", description = "username@domain.tld")
+    private String username;
+
+    @Parameters(index = "1", description = "[password]", defaultValue = "")
+    private String password;
 
     public static void main(String[] args) {
-        String password;
-        if (args.length < 1 || args.length > 2) {
-            System.err.println("java -jar ComplianceTester.jar username@domain.tld [password]");
-            System.exit(1);
-            return;
-        }
-        Jid jid = Jid.of(args[0]);
+        CommandLine.run(new ComplianceTester(), args);
+    }
 
-        if (args.length == 2) {
-            password = args[1];
+    public void run() {
+        Jid jid = Jid.of(username);
+
+        if (!password.isEmpty()) {
             AccountStore.storePassword(jid, password);
         } else {
             String storedPassword = AccountStore.getPassword(jid);
@@ -56,19 +68,19 @@ public class ComplianceTester {
                 Conversations.class
         );
         for(Class<?extends AbstractTestSuite> testSuite : testSuites) {
-            runTestSuite(testSuite, jid, password);
+            runTestSuite(testSuite, jid, password, debug);
             System.out.println("\n");
         }
     }
 
-    private static void runTestSuite(Class <? extends AbstractTestSuite> clazz, Jid jid, String password) {
-        runTestSuite(clazz, jid, password, false);
+    private static void runTestSuite(Class <? extends AbstractTestSuite> clazz, Jid jid, String password, boolean debug) {
+        runTestSuite(clazz, jid, password, false, debug);
     }
 
-    private static void runTestSuite(Class <? extends AbstractTestSuite> clazz, Jid jid, String password, boolean rerun) {
+    private static void runTestSuite(Class <? extends AbstractTestSuite> clazz, Jid jid, String password, boolean rerun, boolean debug) {
          try {
             try {
-                AbstractTestSuite testSuite = TestSuiteFactory.create(clazz, jid, password);
+                AbstractTestSuite testSuite = TestSuiteFactory.create(clazz, jid, password, debug);
                 System.out.println("Use compliance suite '"+testSuite.getName()+"' to test "+jid.getDomain()+"\n");
                 testSuite.run();
                 System.out.println("\n"+testSuite.getName() + ": " + testSuite.result());
