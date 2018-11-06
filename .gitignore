@@ -6,3 +6,4 @@ target/
 reports/*.html
 reports/*.json
 .gradle/
+build/
