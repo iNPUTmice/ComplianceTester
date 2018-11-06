@@ -7,6 +7,7 @@ import rocks.xmpp.core.session.Extension;
 import rocks.xmpp.core.session.XmppClient;
 import rocks.xmpp.core.session.XmppSessionConfiguration;
 import rocks.xmpp.core.session.debug.ConsoleDebugger;
+import java.time.Duration;
 
 public class TestSuiteFactory {
 
@@ -15,6 +16,7 @@ public class TestSuiteFactory {
         XmppSessionConfiguration.Builder builder = XmppSessionConfiguration.builder();
         builder.extensions(Extension.of(ClientStateIndication.class));
         builder.initialPresence(null);
+        builder.defaultResponseTimeout(Duration.ofSeconds(10));
         if (debug) {
             builder.debugger(ConsoleDebugger.class);
         }
