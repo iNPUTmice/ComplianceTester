@@ -1,5 +1,7 @@
-Compliance Tester for XMPP Servers
+[DEPRECATED] Compliance Tester for XMPP Servers
 ==================================
+
+### Note: This tool has been deprecated in favour of the new Compliance Tester available on https://github.com/iNPUTmice/caas
 
 Use this tool to test your XMPP server for compatibility with various compliance suites.
 
