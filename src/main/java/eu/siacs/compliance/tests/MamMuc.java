@@ -31,7 +31,7 @@ public class MamMuc extends AbstractTest {
             }
             final ChatService chatService = chatServices.get(0);
             final ChatRoom room = chatService.createRoom(UUID.randomUUID().toString());
-            room.enter("test");
+            room.enter(UUID.randomUUID().toString());
             try {
                 final DataForm.Field mam = room.getConfigurationForm().get().findField("mam");
                 if (mam != null) {
