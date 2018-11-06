@@ -8,6 +8,7 @@ repositories {
 }
 
 dependencies {
+  implementation 'info.picocli:picocli:3.7.0'
   implementation 'rocks.xmpp:xmpp-core-client:0.8.0'
   implementation 'rocks.xmpp:xmpp-extensions-client:0.8.0'
   implementation 'de.measite.minidns:minidns-hla:0.2.4'
