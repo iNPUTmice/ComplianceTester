@@ -2,7 +2,7 @@ package eu.siacs.compliance.tests;
 
 import eu.siacs.compliance.Result;
 import rocks.xmpp.core.session.XmppClient;
-import rocks.xmpp.core.stream.StreamFeaturesManager;
+import rocks.xmpp.core.stream.client.StreamFeaturesManager;
 import rocks.xmpp.core.stream.model.StreamFeature;
 
 import java.util.Map;

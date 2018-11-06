@@ -1,0 +1,33 @@
+plugins {
+  id 'java'
+  id "com.github.johnrengelman.shadow" version "4.0.2"
+}
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  implementation 'info.picocli:picocli:3.7.0'
+  implementation 'rocks.xmpp:xmpp-core-client:0.8.0'
+  implementation 'rocks.xmpp:xmpp-extensions-client:0.8.0'
+  implementation 'de.measite.minidns:minidns-hla:0.2.4'
+  implementation 'org.bouncycastle:bcpkix-jdk15on:1.60'
+}
+
+compileJava {
+  options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}
+
+jar {
+  manifest {
+    attributes 'Main-Class': 'eu.siacs.ComplianceTester'
+  }
+}
+
+shadowJar {
+  mergeServiceFiles()
+  dependencies {
+    exclude(dependency('org.bouncycastle:bcpkix-jdk15on'))
+  }
+}

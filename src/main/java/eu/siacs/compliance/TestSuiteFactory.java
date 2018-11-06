@@ -6,14 +6,19 @@ import rocks.xmpp.addr.Jid;
 import rocks.xmpp.core.session.Extension;
 import rocks.xmpp.core.session.XmppClient;
 import rocks.xmpp.core.session.XmppSessionConfiguration;
+import rocks.xmpp.core.session.debug.ConsoleDebugger;
 
 public class TestSuiteFactory {
 
-    public static AbstractTestSuite create(Class <? extends AbstractTestSuite> clazz, Jid jid, String password) throws AbstractTestSuite.TestSuiteCreationException {
-        XmppSessionConfiguration configuration = XmppSessionConfiguration.builder()
-                .extensions(Extension.of(ClientStateIndication.class))
-                .initialPresence(null)
-                .build();
+    public static AbstractTestSuite create(Class <? extends AbstractTestSuite> clazz, Jid jid, String password, boolean debug)
+        throws AbstractTestSuite.TestSuiteCreationException {
+        XmppSessionConfiguration.Builder builder = XmppSessionConfiguration.builder();
+        builder.extensions(Extension.of(ClientStateIndication.class));
+        builder.initialPresence(null);
+        if (debug) {
+            builder.debugger(ConsoleDebugger.class);
+        }
+        XmppSessionConfiguration configuration = builder.build();
         final XmppClient client = XmppClient.create(jid.getDomain(),configuration);
         try {
             AbstractTestSuite testSuite = clazz.getDeclaredConstructor(XmppClient.class, Jid.class, String.class).newInstance(client, jid, password);

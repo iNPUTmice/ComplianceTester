@@ -15,7 +15,7 @@ public class EntityCapabilities extends AbstractStreamFeatureTest {
 
     @Override
     Class<? extends StreamFeature> getStreamFeature() {
-        return rocks.xmpp.extensions.caps.model.EntityCapabilities.class;
+        return rocks.xmpp.extensions.caps.model.EntityCapabilities1.class;
     }
 
     @Override
